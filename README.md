@@ -16,3 +16,5 @@ bin/kafka-topics.sh --create --topic "topic-name" --bootstrap-server localhost:9
 
 ** For console consumer
 bin/kafka-console-consumer.sh --topic "topic-name-from-where-to-consume" --from-beginning --bootstrap-server localhost:9092
+
+#### Additional link : https://learn.conduktor.io/kafka/how-to-install-apache-kafka-on-linux-without-zookeeper-kraft-mode/
