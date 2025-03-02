@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: kafka-demo
+
+kafka:
+  bootstrap_server:
+    host: localhost
+    port: 9092
+  topic:
+    prod: Demo-Topic-2
+    default: default-fallback-topic
+    partitioner:
+      name: com.demo.kafka.producer.partitioners.MyCustomPartition
+  producer:
+    idempotent:
+      enable: False
+      min_insync_replica: 5
+      ack_type: all
+      retries: 5
+    serializers:
+      key: org.apache.kafka.common.serialization.IntegerSerializer
+      value: org.springframework.kafka.support.serializer.JsonSerializer

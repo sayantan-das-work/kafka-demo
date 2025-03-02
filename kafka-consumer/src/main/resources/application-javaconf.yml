@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: kafka-demo
+
+kafka:
+  bootstrap_server:
+    host: localhost
+    port: 9092
+  topic:
+    prod: Demo-Topic-2
+    default: default-fallback-topic
+  consumer:
+    offset_reset: earliest
+    deserializers:
+      key: org.apache.kafka.common.serialization.IntegerDeserializer
+      value: org.springframework.kafka.support.serializer.JsonDeserializer
+  message:
+    trusted_package: com.demo.kafka.model
